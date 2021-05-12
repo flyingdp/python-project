@@ -1,3 +1,13 @@
+
+# id 对象所存储的内存地址
+# type 对象的数据类型
+
+name = '董朋'
+print(id(name))
+print(type(name))
+print(name)
+
+
 print("我是董朋 开始学python")
 print("I", "LOVE", "java")
 print("100+100=", 100 + 100)
