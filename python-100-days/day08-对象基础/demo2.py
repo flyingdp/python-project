@@ -1,18 +1,23 @@
 # @Time: 2021/5/12 22:27  
 # @Author: flying
 # @Desc: https://github.com/jackfrued/Python-100-Days/blob/master/Day01-15/08.面向对象编程基础.md
+
+# 在Python中，属性和方法的访问权限只有两种，也就是公开的和私有的，如果希望属性是私有的，在给属性命名时可以用两个下划线作为开头
 class Test:
     def __init__(self, foo):
-        self._foo = foo
+        self.__foo = foo
 
     def bar(self):
-        print(self._foo)
+        print("foo值:%s" % self.__foo)
 
 
 def main():
     test = Test('hello')
     test.bar()
-    print(test._foo)
+
+    test.__foo = 'world'
+    test.bar()
+    print(test.__foo)  # AttributeError: 'Test' object has no attribute '__foo' 因为foo变量是私有的
 
 
 if __name__ == "__main__":
