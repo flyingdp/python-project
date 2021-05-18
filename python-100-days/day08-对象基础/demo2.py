@@ -15,10 +15,13 @@ def main():
     test = Test('hello')
     test.bar()
 
-    test.__foo = 'world'
-    test.bar()
+    # test.__foo = 'world'
+    # test.bar()
+    #  无法从外部访问实例变量.__foo
     print(test.__foo)  # AttributeError: 'Test' object has no attribute '__foo' 因为foo变量是私有的
 
+    # 仍然可以通过_Test__foo来访问__foo变量
+    print(test._Test__foo)
 
 if __name__ == "__main__":
     main()

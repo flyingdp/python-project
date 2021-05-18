@@ -8,19 +8,30 @@
 
 
 class Test:
-    def __init__(self, foo):
-        self.__foo = foo
+    def __init__(self, name):
+        self.__name = name
 
 
-    def __bar(self):
-        print(self.__foo)
-        print('__bar')
+    # 通过set/get方法给私有变量赋值
+    def get_name(self):
+        return self.__name
+
+
+    def set_name(self, name):
+        self.__name = name
+
+
+    def bar(self):
+        print(self.__name)
 
 
 def main():
     test = Test('hello')
-    test.__bar()
+    test.bar()
 
+    test.set_name('dong')
+    name = test.get_name()
+    test.bar()
 
 
 if __name__ == "__main__":

@@ -15,6 +15,7 @@ class Person(object):
         self._name = name
         self._age = age
 
+    # Python内置的@property装饰器就是负责把一个方法变成属性调用的
     # 访问器 - getter方法
     @property
     def name(self):
@@ -44,10 +45,18 @@ def main():
     person = Person('flying', 26)
     person.play()
 
-    person.name = '董朋'
+    person.name = '董朋'  # OK，实际转化为person.set_name('董朋')
     person.age = 12
     person.play()
 
 
 if __name__ == '__main__':
     main()
+
+
+
+
+
+
+
+
