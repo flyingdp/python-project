@@ -15,3 +15,7 @@ print("c = 1 + 5j的类型：", type(c))
 print("d = hello world的类型", type(d))
 print("f = False：", type(f))
 
+
+x = 1000
+y = 1000
+print('x is y',x is y)
